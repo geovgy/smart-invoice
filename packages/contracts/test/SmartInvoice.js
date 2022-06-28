@@ -1472,6 +1472,29 @@ describe("SmartInvoice", function () {
       .withArgs(provider.address, invoice.address, [13, 14]);
   });
 
+  it("Should addMilestones(uint256[]) and not update details", async function () {
+    const DETAILS_BYTES32 =
+      "0x1010101000000000000000000000000000000000000000000000000000101010";
+    invoice = await SmartInvoice.deploy();
+    await invoice.deployed();
+    await invoice.init(
+      client.address,
+      provider.address,
+      individualResolverType,
+      resolver.address,
+      mockWrappedNativeToken.address,
+      amounts,
+      terminationTime,
+      resolutionRate,
+      DETAILS_BYTES32,
+      mockWrappedNativeToken.address,
+      requireVerification,
+    );
+
+    await invoice.connect(client)["addMilestones(uint256[])"]([13, 14]);
+    expect(await invoice.connect(client).details()).to.equal(DETAILS_BYTES32);
+  });
+
   it("Should revert addMilestones if executed by non-client/non-provider address", async function () {
     await expect(
       invoice.connect(randomSigner)["addMilestones(uint256[])"]([13, 14]),
