@@ -4,7 +4,13 @@
     "node": true,
     "es6": true
   },
-  "extends": ["airbnb", "prettier", "react-app", "plugin:mocha/recommended"],
+  "extends": [
+    "airbnb",
+    "prettier",
+    "react-app",
+    "plugin:mocha/recommended",
+    "plugin:@next/next/recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 8,
     "sourceType": "module"
