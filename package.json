@@ -35,7 +35,8 @@
       "**/solidity-coverage",
       "**/bulma",
       "**/@ethersproject/**",
-      "**/@docusaurus/**"
+      "**/@docusaurus/**",
+      "**/react/**"
     ],
     "packages": [
       "packages/*"

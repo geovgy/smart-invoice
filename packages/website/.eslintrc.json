@@ -6,6 +6,7 @@
     }
   },
   "rules": {
-    "import/no-default-export": "off"
+    "import/no-default-export": "off",
+    "react/destructuring-assignment": "off"
   }
 }
