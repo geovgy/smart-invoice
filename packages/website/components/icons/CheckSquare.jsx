@@ -1,7 +1,7 @@
 import { Icon } from '@chakra-ui/react';
 import React from 'react';
 
-export const CheckSquareIcon = props => (
+export const CheckSquareIcon = ({ ...props }) => (
   <Icon viewBox="0 0 30 30" {...props} xmlns="http://www.w3.org/2000/svg">
     <rect width="30" height="30" rx="12" fill="currentColor" />
     <path

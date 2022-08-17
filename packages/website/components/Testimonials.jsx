@@ -1,14 +1,11 @@
 import {
   Box,
-  Collapse,
   Flex,
   Heading,
   HStack,
   Slide,
-  SlideFade,
   Text,
   useInterval,
-  VStack,
 } from '@chakra-ui/react';
 import NextImage from 'next/image';
 import React, { useState } from 'react';
